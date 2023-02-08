@@ -115,22 +115,49 @@ python = "Python is Amazing"
 # print(num_list)
 
 # dictionary (key:value 쌍으로 관리, 리스트는 목록)
-cabinet = {3: "유재석", 100: "김태호"}
-# print(cabinet[3])
-# print(cabinet[100])
-# cab1 = cabinet.get(3)
-print(cabinet)
-print(cabinet.get(5, "사용가능")) #값이 없는 경우 정의 한 결과를 출력 함
-print(3 in cabinet) #3번 캐비넷을 사용 중인지 확인
-print(5 in cabinet) #5번 캐비넷을 사용 중인지 확인
-del cabinet[3] # 3번 삭제
-cabinet[2] = "하하"  # 사전에 2번 추가
-print(cabinet.keys()) # 사용중인 키 확인
-print(cabinet.values()) # 값만 출력
-print(cabinet.items()) # 키와 값을 함께 출력
-cabinet[1] = "김서연"
-print(cabinet)
-cabinet[10] = "김다연"
-print(cabinet)
-print(cabinet.get(1))
-print(cabinet.get(10))
+# cabinet = {3: "유재석", 100: "김태호"}
+# # print(cabinet[3])
+# # print(cabinet[100])
+# # cab1 = cabinet.get(3)
+# print(cabinet)
+# print(cabinet.get(5, "사용가능")) #값이 없는 경우 정의 한 결과를 출력 함
+# print(3 in cabinet) #3번 캐비넷을 사용 중인지 확인
+# print(5 in cabinet) #5번 캐비넷을 사용 중인지 확인
+# del cabinet[3] # 3번 삭제
+# cabinet[2] = "하하"  # 사전에 2번 추가
+# print(cabinet.keys()) # 사용중인 키 확인
+# print(cabinet.values()) # 값만 출력
+# print(cabinet.items()) # 키와 값을 함께 출력
+# cabinet[1] = "김서연"
+# print(cabinet)
+# cabinet[10] = "김다연"
+# print(cabinet)
+# print(cabinet.get(1))
+# print(cabinet.get(10))
+
+def open_account():
+    print("계좌가 생성되었습니다.")
+    
+open_account()
+
+def deposit(balance, money):
+    print("입금이 완료 되었습니다. 잔액은 {0}원 입니다.".format(balance + money))
+    return balance + money
+
+def withdraw(balance, money):
+    if balance >= money:
+        print("출금이 완료 되었습니다. 잔액은 {0}원 입니다.".format(balance - money))
+        return balance - money
+    else:
+        print("잔액이 부족합니다. 잔액은 {0}원 입니다.".format(balance))
+        return balance
+        
+
+
+balance = 0
+balance = deposit(balance, 1000)
+print(balance)
+
+balance = withdraw(balance, 2000)
+balance = withdraw(balance, 500)
+print(balance)
