@@ -224,21 +224,188 @@ python = "Python is Amazing"
 # gun = checkpoint_ret(gun, 2)
 # print("남은 총 : {0}".format(gun))
 
-def std_weight(height, gender):
-    if gender == "남자":
-        std_weight = height * height * 22
-        return(std_weight)
-    elif gender == "여자":
-            return height * height *21
+# def std_weight(height, gender):
+#     if gender == "남자":
+#         std_weight = height * height * 22
+#         return(std_weight)
+#     elif gender == "여자":
+#             return height * height *21
             
 
-height = 175
-gender = "여자"            
-weight = round(std_weight(height / 100, gender),2)
-print("키 {0}cm {1}의 표준 체중은 {2}kg 입니다.".format(height, gender, weight))
+# height = 175
+# gender = "여자"            
+# weight = round(std_weight(height / 100, gender),2)
+# print("키 {0}cm {1}의 표준 체중은 {2}kg 입니다.".format(height, gender, weight))
+
+# print("Python","Java","JavaScript", sep=",", end="?")
+# print(" 무엇이 더 재밌을까요?")
+
+# scores = {"수학":0, "영어":50, "코딩":100}         
+
+# for subject, score in scores.items():
+#     print(subject.ljust(8), str(score).rjust(4), sep=":")
             
-            
-            
-            
-        
+# for num in range(1,21):
+#     print("대기번호 : " + str(num).zfill(3))
     
+# print("{0:>10}".format(500))
+# print("{0:_<10}".format(500))
+
+#파일쓰기
+# score_file = open("score.txt","w",encoding="utf8")   
+# print("수학 : 0", file=score_file)
+# print("영어 : 50", file=score_file)
+# score_file.close()
+    
+#파일에 내용 추가
+# score_file = open("score.txt","a", encoding="utf8")
+# score_file.write("과학 : 80")
+# score_file.write("\n코딩 : 100")
+# score_file.close()
+
+#파일 읽기
+# score_file = open("score.txt","r", encoding="utf8")
+# print(score_file.read())
+# score_file.close()
+
+# score_file = open("result_log.txt","r")
+
+# while True:
+#     line = score_file.readline()
+#     if not line:
+#         break
+#     fin = line.find('CC:')
+#     print(fin)
+#     # lst = line.split("CC:")
+#     # print(lst)
+    
+# 50개 파일 생성 및 내용 추가하기
+# for num in range(1,51):
+#     lines = ['- '+ str(num) + '주차 주간보고 -', '\n부서 : ', '\n이름 : ', '\n업무 요약 :']
+# #    print(str(num) + "주차.txt")
+#     f = open(str(num) + '주차.txt', 'w')
+#     f.writelines(lines)
+# f.close()
+       
+# for i in range(1, 51):
+#     with open(str(i) + "주차.txt", "w", encoding="utf8") as report_file:
+#         report_file.write("- {0} 주차 주간보고 -".format(i))
+#         report_file.write("\n부서 : ")
+#         report_file.write("\n이름 : ")
+#         report_file.write("\n업무 요약 : ")
+        
+# name = "마린"
+# hp = 40
+# damage = 5
+
+# print("{0} 유닛이 생성되었습니다.".format(name))
+# print("체력 {0}, 공격력 {1}\n".format(hp, damage))
+
+# tank_name = "탱크"
+# tank_hp = 150
+# tank_damage = 35
+
+# print("{0} 유닛이 생성되었습니다.".format(tank_name))
+# print("체력 {0}, 공격력 {0}\n".format(tank_hp, tank_damage))
+
+# def attack(name, location, damage):
+#     print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(name, location, damage))
+
+# attack(name, "1시", damage)
+# attack(tank_name, "1시", tank_damage)
+
+# class Unit:
+#     def __init__(self, name, hp, damage):
+#         self.name = name
+#         self.hp = hp
+#         self.damage = damage
+#         print("{0} 유닛이 생성되었습니다.".format(self.name))
+#         print("체력 {0}, 공격력 {1}".format(self.hp, self.damage))
+        
+# marine1 = Unit("마린", 40, 5)
+# marine2 = Unit("마린", 40, 5)
+# tank = Unit("탱크", 150, 35)
+
+# import requests
+# from bs4 import BeautifulSoup
+
+# # Set the headers to mimic a browser request
+# headers = {
+#     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+
+# # Make a request to the webpage with headers
+# url = "https://www.amazon.com/gp/bestsellers/electronics/3411001/ref=pd_zg_hrsr_electronics"
+# response = requests.get(url, headers=headers)
+
+# # Parse the HTML content using Beautiful Soup
+# soup = BeautifulSoup(response.content, 'html.parser')
+
+# # Find all the product items
+# product_items = soup.find_all('div', {'class': 'a-section a-spacing-none p13n-asin'})
+
+# # Loop through each product item and extract the product details
+# for item in product_items:
+#     # Extract the product name
+#     product_name = item.find('span', {'class': 'a-size-small a-color-base'}).text.strip()
+#     # Extract the star rating
+#     star_rating = item.find('span', {'class': 'a-icon-alt'}).text.strip()
+#     # Extract the price
+#     price = item.find('span', {'class': 'p13n-sc-price'}).text.strip()
+#     # Print the product details
+#     print("Product Name: ", product_name)
+#     print("Star Rating: ", star_rating)
+#     print("Price: ", price)
+#     print("-" * 50)
+
+# import requests
+# from bs4 import BeautifulSoup
+
+# # Set the headers to mimic a browser request
+# headers = {
+#     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+
+# # Make a request to the webpage with headers
+# url = "https://www.amazon.com/gp/bestsellers/electronics/3411001/ref=pd_zg_hrsr_electronics"
+# response = requests.get(url, headers=headers)
+
+# # Parse the HTML content using Beautiful Soup
+# soup = BeautifulSoup(response.content, 'html.parser')
+
+# print(soup)
+
+# # # Find all the product names using the provided class
+# # product_names = soup.find_all('span', {'class': '_cDEzb_p13n-sc-css-line-clamp-3_g3dy1'})
+
+# # # Loop through each product name and print it
+# # # for name in product_names:
+# # #     print(name.text.strip())
+
+# # print(product_names)
+
+# # /html/body/div[1]/div[3]/div/div/div[1]/div/div/div[2]/div[1]/div[1]/div[1]/div/div[2]/div/a[2]/span/div
+# # //*[@id="B07C2QHTTZ"]/a[2]/span/div
+
+import requests
+from bs4 import BeautifulSoup
+
+# Set the headers to mimic a browser request
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'}
+
+# Make a request to the webpage with headers
+url = "https://www.amazon.com/gp/bestsellers/electronics/3411001/ref=pd_zg_hrsr_electronics"
+response = requests.get(url, headers=headers)
+
+# Parse the HTML content using Beautiful Soup
+soup = BeautifulSoup(response.content, 'html.parser')
+
+print(soup, 'w', file='error.txt')
+
+# # Find all the product names using the provided class
+# product_names = soup.find_all('div', {'class': 'p13n-sc-truncated'})
+
+# print(product_names)
+
+# # Loop through each product name and print it
+# for name in product_names:
+#     print(name.text.strip())
